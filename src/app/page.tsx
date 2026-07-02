@@ -503,7 +503,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="reveal flex justify-center mb-8">
             <div className="rounded-full w-24 h-24 bg-primary/5 flex items-center justify-center border border-primary/10 shadow-md animate-glow-pulse">
-              <span className="material-symbols-outlined text-5xl text-primary/60 select-none leading-none flex items-center justify-center w-full h-full" style={{ fontVariationSettings: '"FILL" 0' }}>
+              <span className="material-symbols-outlined text-6xl text-primary/60 select-none leading-none flex items-center justify-center w-full h-full" style={{ fontVariationSettings: '"FILL" 0' }}>
                 calendar_month
               </span>
             </div>
