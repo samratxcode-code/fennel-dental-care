@@ -94,7 +94,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-28 overflow-hidden fennel-frond-bg pb-12 md:pb-0">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-16 grid md:grid-cols-12 gap-8 items-center">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-6 z-20">
             <div className="flex items-center gap-2 mb-6 animate-fade-in">
               <div className="flex text-[#FFD700]">
@@ -152,7 +152,7 @@ export default function Home() {
 
       {/* Trust Bar */}
       <section className="bg-surface-container py-12 border-y border-outline-variant/10">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-16 flex flex-wrap justify-between items-center gap-10">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-wrap justify-between items-center gap-10">
           <div className="flex flex-col">
             <span className="font-body text-xs font-semibold uppercase tracking-wider text-on-surface-variant opacity-60 mb-2">
               Google Rating
@@ -178,7 +178,7 @@ export default function Home() {
 
       {/* Meet the Doctor */}
       <section id="meet-the-doctor" className="py-24 overflow-hidden">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-16">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-5 order-2 md:order-1">
               <div className="relative">
@@ -224,7 +224,7 @@ export default function Home() {
 
       {/* Services Section */}
       <section id="services" className="py-24 bg-surface-container-low border-y border-outline-variant/15 relative">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-16">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div className="max-w-xl">
               <span className="font-body text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">
@@ -349,7 +349,7 @@ export default function Home() {
 
       {/* Why Fennel */}
       <section id="why-fennel" className="py-24">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
               className="w-full rounded shadow-xl"
@@ -403,7 +403,7 @@ export default function Home() {
 
       {/* Patient Voices (with dynamic local review additions) */}
       <section id="voices" className="py-24 bg-surface-container overflow-hidden">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-16 text-center mb-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 text-center mb-12">
           <span className="font-body text-xs font-semibold tracking-wider uppercase text-primary mb-4 block">
             Kind Words
           </span>
@@ -413,7 +413,7 @@ export default function Home() {
         </div>
 
         {/* Carousel / Reviews List */}
-        <div className="flex gap-6 px-6 md:px-16 overflow-x-auto pb-8 snap-x no-scrollbar max-w-[1280px] mx-auto">
+        <div className="flex gap-6 px-6 md:px-12 overflow-x-auto pb-8 snap-x no-scrollbar max-w-[1440px] mx-auto">
           {reviews.map((r, i) => (
             <div
               key={i}
@@ -528,7 +528,7 @@ export default function Home() {
 
       {/* Location & Hours */}
       <section id="location" className="py-24">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-16 grid md:grid-cols-12 gap-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4 mb-8 md:mb-0">
             <h2 className="font-display text-3xl text-secondary mb-8 font-semibold italic">
               Visit us in<br />Sector 92.

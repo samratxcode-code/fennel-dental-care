@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-surface-container py-16 border-t border-outline-variant/20">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-16 max-w-[1280px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-12 max-w-[1440px] mx-auto">
         <div className="md:col-span-2">
           <div className="font-display text-2xl text-primary font-bold mb-6 italic">
             Fennel Dental Care
