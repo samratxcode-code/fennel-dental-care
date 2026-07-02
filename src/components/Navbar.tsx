@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useDevice } from "@/hooks/useDevice";
+import Link from "next/link";
 
 interface NavbarProps {
   onBookClick: () => void;
@@ -8,6 +10,7 @@ interface NavbarProps {
 
 export default function Navbar({ onBookClick }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { isMobile } = useDevice();
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20">
@@ -16,59 +19,61 @@ export default function Navbar({ onBookClick }: NavbarProps) {
           Fennel Dental Care
         </a>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex gap-10 items-center">
-          <a
-            href="#services"
-            className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
-          >
-            Services
-          </a>
-          <a
-            href="#meet-the-doctor"
-            className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
-          >
-            Meet the Doctor
-          </a>
-          <a
-            href="#why-fennel"
-            className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
-          >
-            Why Fennel
-          </a>
-          <a
-            href="#voices"
-            className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
-          >
-            Patient Voices
-          </a>
-          <a
-            href="#location"
-            className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
-          >
-            Contact
-          </a>
-
+        {/* Adaptive Layout Rendering */}
+        {!isMobile ? (
+          /* Desktop Layout */
+          <div className="flex gap-10 items-center">
+            <a
+              href="#services"
+              className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
+            >
+              Services
+            </a>
+            <a
+              href="#meet-the-doctor"
+              className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
+            >
+              Meet the Doctor
+            </a>
+            <a
+              href="#why-fennel"
+              className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
+            >
+              Why Fennel
+            </a>
+            <a
+              href="#voices"
+              className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
+            >
+              Patient Voices
+            </a>
+            <a
+              href="#location"
+              className="font-body text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300"
+            >
+              Contact
+            </a>
+            <button
+              onClick={onBookClick}
+              className="bg-primary text-on-primary px-6 py-2.5 text-xs font-semibold tracking-widest uppercase hover:bg-primary/95 transition-all active:scale-95 cursor-pointer"
+            >
+              Book an Appointment
+            </button>
+          </div>
+        ) : (
+          /* Mobile Toggle Button */
           <button
-            onClick={onBookClick}
-            className="bg-primary text-on-primary px-6 py-2.5 text-xs font-semibold tracking-widest uppercase hover:bg-primary/95 transition-all active:scale-95 cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-primary p-2 focus:outline-none"
           >
-            Book an Appointment
+            <span className="material-symbols-outlined">{isOpen ? "close" : "menu"}</span>
           </button>
-        </div>
-
-        {/* Mobile menu toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-primary p-2 focus:outline-none"
-        >
-          <span className="material-symbols-outlined">{isOpen ? "close" : "menu"}</span>
-        </button>
+        )}
       </div>
 
-      {/* Mobile Drawer */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-surface border-b border-outline-variant/30 px-6 py-8 flex flex-col gap-6 shadow-xl animate-fade-in">
+      {/* Mobile Drawer (Only rendered on mobile when open) */}
+      {isMobile && isOpen && (
+        <div className="absolute top-full left-0 w-full bg-surface border-b border-outline-variant/30 px-6 py-8 flex flex-col gap-6 shadow-xl animate-fade-in">
           <a
             href="#services"
             onClick={() => setIsOpen(false)}
@@ -104,7 +109,6 @@ export default function Navbar({ onBookClick }: NavbarProps) {
           >
             Contact
           </a>
-
           <button
             onClick={() => {
               setIsOpen(false);

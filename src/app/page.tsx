@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
+import { useDevice } from "@/hooks/useDevice";
 
 interface Review {
   name: string;
@@ -41,6 +42,7 @@ export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [bookingPreset, setBookingPreset] = useState("");
   const [reviews, setReviews] = useState<Review[]>(PRESET_REVIEWS);
+  const { isMobile, isDesktop } = useDevice();
 
   // Review Form state
   const [newReviewName, setNewReviewName] = useState("");
@@ -130,10 +132,13 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Adaptive Hero Image Rendering */}
           <div className="md:col-span-6 relative mt-12 md:mt-0">
-            <div className="absolute -right-20 -top-20 opacity-20 w-80 h-80 pointer-events-none text-secondary">
-              <span className="material-symbols-outlined text-[300px]">eco</span>
-            </div>
+            {!isMobile && (
+              <div className="absolute -right-20 -top-20 opacity-20 w-80 h-80 pointer-events-none text-secondary">
+                <span className="material-symbols-outlined text-[300px]">eco</span>
+              </div>
+            )}
             <div className="rounded-3xl overflow-hidden aspect-[4/5] bg-surface-container shadow-2xl relative z-10 border border-outline-variant/20">
               <img
                 className="w-full h-full object-cover object-left"
@@ -141,11 +146,13 @@ export default function Home() {
                 src="/hero-dentist.jpg"
               />
             </div>
-            <div className="absolute -bottom-10 -left-10 bg-surface-container-high p-8 border border-outline-variant/30 hidden lg:block z-30 shadow-xl max-w-xs">
-              <p className="font-display text-lg italic text-secondary font-medium">
-                "A sensory retreat from traditional clinics."
-              </p>
-            </div>
+            {isDesktop && (
+              <div className="absolute -bottom-10 -left-10 bg-surface-container-high p-8 border border-outline-variant/30 hidden lg:block z-30 shadow-xl max-w-xs">
+                <p className="font-display text-lg italic text-secondary font-medium">
+                  "A sensory retreat from traditional clinics."
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
