@@ -550,7 +550,7 @@ export default function Home() {
               </div>
               <div className="pt-4 flex flex-col gap-4">
                 <a
-                  href="https://maps.google.com/?q=Sector+92+Noida"
+                  href="https://maps.app.goo.gl/Lwr8unc5usQHiNRS8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-primary text-on-primary px-6 py-3 font-semibold text-xs tracking-wider uppercase inline-flex items-center justify-center gap-2 hover:bg-primary/95 transition-colors shadow-sm"

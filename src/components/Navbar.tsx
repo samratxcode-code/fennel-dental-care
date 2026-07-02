@@ -48,12 +48,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
           >
             Contact
           </a>
-          <a
-            href="/admin"
-            className="font-body text-sm uppercase tracking-wider text-secondary font-medium hover:text-primary transition-colors duration-300 mr-2"
-          >
-            Admin Panel
-          </a>
+
           <button
             onClick={onBookClick}
             className="bg-primary text-on-primary px-6 py-2.5 text-xs font-semibold tracking-widest uppercase hover:bg-primary/95 transition-all active:scale-95 cursor-pointer"
@@ -109,13 +104,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
           >
             Contact
           </a>
-          <a
-            href="/admin"
-            onClick={() => setIsOpen(false)}
-            className="font-body text-lg uppercase tracking-wider text-secondary font-semibold hover:text-primary transition-colors"
-          >
-            Admin Panel
-          </a>
+
           <button
             onClick={() => {
               setIsOpen(false);
