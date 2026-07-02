@@ -501,10 +501,12 @@ export default function Home() {
         <div className="floating-orb absolute top-[30%] left-[10%] w-[300px] h-[300px] bg-primary/8 -z-10"></div>
         <div className="floating-orb absolute bottom-[20%] right-[15%] w-[200px] h-[200px] bg-secondary/8 -z-10" style={{ animationDelay: "4s" }}></div>
         <div className="max-w-3xl mx-auto px-6">
-          <div className="reveal">
-            <span className="material-symbols-outlined text-7xl text-primary/40 mb-6 select-none block animate-glow-pulse rounded-full w-24 h-24 flex items-center justify-center mx-auto bg-primary/5">
-              calendar_month
-            </span>
+          <div className="reveal flex justify-center mb-8">
+            <div className="rounded-full w-20 h-20 bg-primary/5 flex items-center justify-center border border-primary/10 shadow-inner animate-glow-pulse">
+              <span className="material-symbols-outlined text-4xl text-primary/60 select-none">
+                calendar_month
+              </span>
+            </div>
           </div>
           <h2 className="reveal stagger-1 font-display text-3xl md:text-5xl text-secondary mb-8 italic font-semibold leading-tight">
             Ready for a different kind of dental experience?
